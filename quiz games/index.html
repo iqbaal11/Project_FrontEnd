@@ -1,0 +1,71 @@
+<!DOCTYPE html> 
+<!-- versi terbaru standar HTML, browser akan membaca file ini sebagai halaman web modern -->
+<!-- kerangka halaman web untuk quiz games -->
+<html lang="en">
+  <!-- menunjukan bahwa bahasa utama halaman ini adalah bhs inggris -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- untuk tampilan responsif di perangkat mobile -->
+    <!-- artinya, lebar halaman akan disesuaikan dengan lebar layar pengguna -->
+    <title>Quiz Game</title>
+    <!-- menentukan judul halaman -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- menghubungkan file CSS eksternal dengan href -->
+  </head>
+  <body>
+    <div class="container">
+      <!-- untuk mengatur tata letak di CSS agar semua elemen terpusat -->
+      <div class="screen active" id="start-screen">
+        <!-- menandakan ini bagian layar utama -->
+         <!-- active berfungsi menampilkan layar, js akan menambah/menghapus class ini untuk berpindah layar -->
+        <h1>kuis</h1>
+        <p>ada 5 pertanyaan</p>
+        <button id="start-btn">mulai kuis</button>
+        <!--tombol ketika di klik akan menjalankan fungsi js, yaitu memulai kuis -->
+      </div>
+
+      <div class="screen" id="quiz-screen">
+        <!-- halaman kedua yang menampilkan pertanyaan kuis -->
+        <div class="quiz-header">
+          <h2 id="question-text">Question goes here</h2>
+          <!-- tempat teks pertanyaan akan ditampilkan oleh js -->
+          <div class="quiz-info">
+            <p>
+              Question <span id="current-question">1</span> of <span id="total-questions">5</span>
+            </p>
+            <!-- menunjukan nomor soal saat ini dan total soal -->
+            <p>Score: <span id="score">0</span></p>
+            <!-- menampilkan skor, diperbarui secara dinamis -->
+          </div>
+        </div>
+
+        <div id="answers-container" class="answers-container">
+          <!-- tempat tombol jawaban dimasukan scr dinamis oleh js-->
+          <!-- js akan membuat elemen <button> untuk setiap pilihan jawaban -->
+        </div>
+
+        <div class="progress-bar">
+          <!-- pembungkus -->
+          <div id="progress" class="progress"></div>
+          <!-- akan diubah panjangnya oleh js -->
+        </div>
+      </div>
+
+      <div id="result-screen" class="screen">
+        <!-- screen ke 3 muncul setelah kuis selesai -->
+        <h1>Quiz Results</h1>
+        <div class="result-info">
+          <p>You scored <span id="final-score">0</span> out of <span id="max-score">5</span></p>
+          <!-- menampilkan hasil akhir -->
+          <div id="result-message">Good job!</div>
+          <!-- menampilkan pesan -->
+        </div>
+        <button id="restart-btn">Restart Quiz</button>
+        <!-- button unutuk restart -->
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <!-- menghubungkan dengan file js -->
+  </body>
+</html>
